@@ -89,7 +89,22 @@ public class FXMLController {
 
     @FXML
     void handleIscrivi(ActionEvent event) {
-
+    	String s=this.txtMatricola.getText();
+    	Integer i=Integer.parseInt(s);
+    	//String ss=this.cmbCorso.getValue().getCodins();
+    	Corso c=this.cmbCorso.getValue();
+    	Studente stud=model.getStudenteByMatricola(i);
+    	//Corso c=model.getCorso(ss);
+    	
+    	if(model.iscrivi(stud, c)) {
+    		this.txtResult.setText("lo studente è stato iscritto al corso correttamente");
+    	} else {
+    		this.txtResult.setText("c'è stato un errore");
+    	}
+    		
+    	
+    	
+    	
     }
 
     @FXML
@@ -102,7 +117,7 @@ public class FXMLController {
     	} else {
     		Studente stud= model.getStudenteByMatricola(i);
     		this.txtNome.setText(stud.getNome());
-    		this.txtNome.setText(stud.getCognome());
+    		this.txtCognome.setText(stud.getCognome());
     	}
 
 

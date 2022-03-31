@@ -46,5 +46,9 @@ public class Model {
 			return false;
 		}
 	}
+	
+	public boolean iscrivi(Studente studente, Corso corso) {
+		return this.corsoDao.iscriviStudenteACorso(studente, corso);
+	}
 
 }

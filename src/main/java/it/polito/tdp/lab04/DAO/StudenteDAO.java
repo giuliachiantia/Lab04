@@ -16,7 +16,7 @@ public class StudenteDAO {
 	
 	public Studente getStudentebyMatricola(int matricola) {
 		String sql="select s.matricola, s.nome, s.cognome, s.CDS "
-				+ "from studente "
+				+ "from studente s "
 				+ "where s.matricola=?";
 		Studente studente=null;
 		try {
